@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import ScratchCard from './ScratchCard';
+import musicFile from './assets/music.mp3'; // Move music.mp3 from public to src/assets
 
 const FloatingHearts = () => {
   const [hearts, setHearts] = useState([]);
@@ -77,7 +78,7 @@ const App = () => {
       className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center relative overflow-hidden font-sans"
       style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('bg.jpg')` }}
     >
-      <audio ref={audioRef} src="/music.mp3" loop />
+      <audio ref={audioRef} src={musicFile} loop />
       <FloatingHearts />
 
       <AnimatePresence mode="wait">
